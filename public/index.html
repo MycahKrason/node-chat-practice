@@ -3,10 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Chat App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <p>This is a chat app with NodeJS</p>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        socket.on('connect', () => {
+            console.log('We are connected to the server');
+        });
+
+        socket.on('disconnect', () => {
+            console.log('We have been disconnected');
+        });
+    </script>
 </body>
 </html>
